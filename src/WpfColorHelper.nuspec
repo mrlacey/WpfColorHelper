@@ -1,20 +1,31 @@
 <?xml version="1.0"?>
 <package>
-    <metadata>
-    <id>ColorHelper</id>
-    <version>0.0.1</version>
-    <authors>Matt Lacey</authors>
-    <owners>mrlacey</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A helper library for color conversions in WPF. Primarily for use in VSIX packages.</description>
-    <releaseNotes>Initial release.</releaseNotes>
-    <copyright>Copyright © Matt Lacey 2024</copyright>
-    <tags>color wpf</tags>
-    <dependencies>
-        <dependency id="System.Drawing.Common" version="5.0.2" />
-    </dependencies>
-    </metadata>
-    <files>
-    <file src="bin\Release\ColorHelper.dll" target="lib\net48" />
-    </files>
+	<metadata>
+		<id>MRLacey.WpfColorHelper</id>
+		<!-- Update signnupkg.targets when change version number -->
+		<version>1.0.0</version>
+		<authors>Matt Lacey</authors>
+		<owners>mrlacey</owners>
+		<license type="expression">MIT</license>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>A helper library for color conversions in WPF. Primarily for use in VSIX packages.</description>
+		<releaseNotes>Initial release.</releaseNotes>
+		<copyright>Copyright © Matt Lacey 2024</copyright>
+		<tags>color wpf</tags>
+		<projectUrl>https://github.com/mrlacey/WpfColorHelper</projectUrl>
+		<repository type="git" url="https://github.com/mrlacey/WpfColorHelper.git" />
+		<icon>assets\icon.png</icon>
+		<readme>docs\readme.md</readme>
+		
+		<dependencies>
+			<group targetFramework=".NETFramework4.8">
+				<dependency id="System.Drawing.Common" version="5.0.2" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="icon.png" target="assets\" />
+		<file src="readme.md" target="docs\" />
+		<file src="bin\Release\WpfColorHelper.*" target="lib\net48" />
+	</files>
 </package>
