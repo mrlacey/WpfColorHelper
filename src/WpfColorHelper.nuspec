@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+    <metadata>
+    <id>ColorHelper</id>
+    <version>0.0.1</version>
+    <authors>Matt Lacey</authors>
+    <owners>mrlacey</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A helper library for color conversions in WPF. Primarily for use in VSIX packages.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright © Matt Lacey 2024</copyright>
+    <tags>color wpf</tags>
+    <dependencies>
+        <dependency id="System.Drawing.Common" version="5.0.2" />
+    </dependencies>
+    </metadata>
+    <files>
+    <file src="bin\Release\ColorHelper.dll" target="lib\net48" />
+    </files>
+</package>
