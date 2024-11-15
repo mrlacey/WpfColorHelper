@@ -9,6 +9,71 @@ public static class ColorHelper
 {
 	private static double Tolerance => 0.000000000000001;
 
+
+	public static double RationalizeOpacity(int percentage)
+	{
+		var workingvalue = percentage;
+
+		if (workingvalue < 0)
+		{
+			workingvalue = 0;
+		}
+		else if (workingvalue > 100)
+		{
+			workingvalue = 100;
+		}
+
+		return workingvalue / 100f;
+	}
+
+	public static SolidColorBrush GetColorBrush(string color)
+	{
+		if (!color?.TrimStart().StartsWith("#") ?? false)
+		{
+			color = GetHexForNamedColor(color.Trim());
+		}
+
+		try
+		{
+			return new SolidColorBrush((Color)ColorConverter.ConvertFromString(color.Trim()));
+		}
+		catch
+		{
+			return null;
+		}
+	}
+
+	public static SolidColorBrush GetColorBrush(string color, double opacity)
+	{
+		if (string.IsNullOrWhiteSpace(color))
+		{
+			return new SolidColorBrush(Colors.Transparent);
+		}
+
+		if (!color.TrimStart().StartsWith("#", StringComparison.InvariantCultureIgnoreCase))
+		{
+			color = GetHexForNamedColor(color.Trim());
+		}
+
+		Color parsedColor;
+
+		try
+		{
+			parsedColor = (Color)ColorConverter.ConvertFromString(color.Trim());
+		}
+#pragma warning disable CA1031 // Do not catch general exception types
+		catch (Exception)
+#pragma warning restore CA1031 // Do not catch general exception types
+		{
+			////Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
+			////OutputPane.Instance.Write($"Unable to translate '{color}' into a color.");
+
+			parsedColor = Colors.Transparent;
+		}
+
+		return new SolidColorBrush(parsedColor) { Opacity = opacity };
+	}
+
 	public static bool TryGetColor(string colorName, out Color color)
 	{
 		try
