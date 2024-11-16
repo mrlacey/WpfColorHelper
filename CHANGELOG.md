@@ -2,6 +2,10 @@
 
 Most recent releases first.
 
+# 1.0.2 - Nov 2024
+
+- Update dependency due to security vulnerability.
+
 # 1.0.1 - Nov 2024
 
 - Added a strong name.

@@ -5,6 +5,6 @@
     <Message Text="Creating package'" Importance="High" />
     <Exec Command="nuget pack WpfColorHelper.nuspec" ConsoleToMSBuild="true" />
     <Message Text="Signing Nuget Packages $(PackageId).$(PackageVersion)" Importance="High" />
-    <Exec Command="sign code certificate-store -cfp $(SM_CERT_FP_SHA256) -csp &quot;DigiCert Software Trust Manager KSP&quot; -k $(SM_KP) -u &quot;http://timestamp.digicert.com&quot;  .\MRLacey.WpfColorHelper.1.0.1.nupkg" Condition="'$(SM_CERT_FP_SHA256)' != ''" ConsoleToMSBuild="true" />
+    <Exec Command="sign code certificate-store -cfp $(SM_CERT_FP_SHA256) -csp &quot;DigiCert Software Trust Manager KSP&quot; -k $(SM_KP) -u &quot;http://timestamp.digicert.com&quot;  .\MRLacey.WpfColorHelper.1.0.2.nupkg" Condition="'$(SM_CERT_FP_SHA256)' != ''" ConsoleToMSBuild="true" />
   </Target>
 </Project>
