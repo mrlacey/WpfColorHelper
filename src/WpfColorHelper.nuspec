@@ -9,7 +9,7 @@
 		<license type="expression">MIT</license>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>A helper library for color conversions in WPF. Primarily for use in VSIX packages.</description>
-		<releaseNotes>Added strong naming.</releaseNotes>
+		<releaseNotes>Updated dependency due to security vulnerability.</releaseNotes>
 		<copyright>Copyright © Matt Lacey 2024</copyright>
 		<tags>color wpf</tags>
 		<projectUrl>https://github.com/mrlacey/WpfColorHelper</projectUrl>
@@ -19,7 +19,7 @@
 		
 		<dependencies>
 			<group targetFramework=".NETFramework4.8">
-				<dependency id="System.Drawing.Common" version="9.0.0" />
+				<dependency id="System.Drawing.Common" version="6.0.0" />
 			</group>
 		</dependencies>
 	</metadata>
