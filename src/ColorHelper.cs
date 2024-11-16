@@ -26,8 +26,19 @@ public static class ColorHelper
 		return workingvalue / 100f;
 	}
 
+	/// <summary>
+	/// Create a solid color brush from a hex code or named color value.
+	/// </summary>
+	/// <param name="color">Color name or hex code</param>
+	/// <returns>A SolidColorBrush or null.</returns>
 	public static SolidColorBrush GetColorBrush(string color)
 	{
+		// TODO: Review enabling nullability.
+		if (string.IsNullOrWhiteSpace(color))
+		{
+			return null;
+		}
+
 		if (!color?.TrimStart().StartsWith("#") ?? false)
 		{
 			color = GetHexForNamedColor(color.Trim());
@@ -43,6 +54,12 @@ public static class ColorHelper
 		}
 	}
 
+	/// <summary>
+	/// Create a solid color brush from a hex code or named color value.
+	/// </summary>
+	/// <param name="color">Color name or hex code</param>
+	/// <param name="opacity"></param>
+	/// <returns>A SolidColorBrush based on the input. Or a Transparent brush if the input can't be converted.</returns>
 	public static SolidColorBrush GetColorBrush(string color, double opacity)
 	{
 		if (string.IsNullOrWhiteSpace(color))
@@ -65,15 +82,20 @@ public static class ColorHelper
 		catch (Exception)
 #pragma warning restore CA1031 // Do not catch general exception types
 		{
+			// TODO: Review reporting invalid values.
 			////Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
 			////OutputPane.Instance.Write($"Unable to translate '{color}' into a color.");
 
 			parsedColor = Colors.Transparent;
 		}
 
+		// TODO: Add validation (clamping?) for opacity.
 		return new SolidColorBrush(parsedColor) { Opacity = opacity };
 	}
 
+	/// <summary>
+	/// Try and get a color from a string that represents a named color or a HEX code.
+	/// </summary>
 	public static bool TryGetColor(string colorName, out Color color)
 	{
 		try
@@ -109,8 +131,12 @@ public static class ColorHelper
 		}
 	}
 
+	/// <summary>
+	/// Get the string representation of the hex value of a color.
+	/// </summary>
 	public static string ToHex(System.Drawing.Color c)
 	{
+		// TODO: review adding an RGBA (or ARGB) version
 		return "#" + c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
 	}
 
