@@ -639,7 +639,6 @@ public static class ColorHelper
 			case "gray": return "#808080";
 			case "green": return "#008000";
 			case "greenyellow": return "#ADFF2F";
-			case "gray": return "#808080";
 			case "grey": return "#808080";
 			case "honeydew": return "#F0FFF0";
 			case "hotpink": return "#FF69B4";
