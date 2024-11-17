@@ -3,13 +3,13 @@
 	<metadata>
 		<id>MRLacey.WpfColorHelper</id>
 		<!-- Update signnupkg.targets when change version number -->
-		<version>1.0.3</version>
-		<releaseNotes>Add "gray" as an alias ofr "grey".</releaseNotes>
+		<version>1.0.2</version>
 		<authors>Matt Lacey</authors>
 		<owners>mrlacey</owners>
 		<license type="expression">MIT</license>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>A helper library for color conversions in WPF. Primarily for use in VSIX packages.</description>
+		<releaseNotes>Updated dependency due to security vulnerability.</releaseNotes>
 		<copyright>Copyright © Matt Lacey 2024</copyright>
 		<tags>color wpf</tags>
 		<projectUrl>https://github.com/mrlacey/WpfColorHelper</projectUrl>
