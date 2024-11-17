@@ -2,6 +2,10 @@
 
 Most recent releases first.
 
+# 1.0.3 - Nov 2024
+
+- Add "gray" as an alias ofr "grey".
+
 # 1.0.2 - Nov 2024
 
 - Update dependency due to security vulnerability.
