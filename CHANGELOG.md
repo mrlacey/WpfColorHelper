@@ -1,6 +1,10 @@
-# WPFColorHelper - Change log
+﻿# WPFColorHelper - Change log
 
 Most recent releases first.
+
+# 1.0.3 - Jan 2025
+
+- Added some more "FunColors".
 
 # 1.0.2 - Nov 2024
 
