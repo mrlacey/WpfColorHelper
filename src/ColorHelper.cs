@@ -772,6 +772,8 @@ public static class ColorHelper
 			case "mushypeas": return "#5FA41C";
 			case "painfulred": return "#FF1A00";
 			case "shrekgreen": return "#009B00";
+			case "beyoncegold": return "#BF8C4E";
+			case "beyhiveyellow": return "#F2C230";
 
 			default: return colorName;
 		}
